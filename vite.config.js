@@ -30,12 +30,9 @@ export default defineConfig({
     ],
     server: {
         proxy: {
-            '/Login': {
+            '/users': {
                 target: 'http://123.60.44.50:3000',
                 changeOrigin: true,
-                pathRewrite: {
-                    '^/Login': ''
-                }
             }
         }
     }
