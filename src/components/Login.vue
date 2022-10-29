@@ -3,7 +3,6 @@ import {ref} from 'vue'
 
 const user = ref('')
 const password = ref('')
-const host = 'http://123.60.44.50:3000'
 
 function login() {
   const myHeaders = new Headers()
@@ -13,7 +12,7 @@ function login() {
     headers: myHeaders,
     redirect: "follow",
   }
-  fetch(`${host}/users/${user.value}`, requestOptions)
+  fetch(`api/users/${user.value}`, requestOptions)
       .then(response => response.json())
       .then(data => {
         if (data.id === user.value) {   // 验证是否存在该用户return data

@@ -27,6 +27,13 @@ export default defineConfig({
     Components({
       resolvers: [ElementPlusResolver()],
     }),
-  ]
-
+  ],
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://123.60.44.50:3000',
+        changeOrigin: true,
+      }
+    }
+  }
 })
