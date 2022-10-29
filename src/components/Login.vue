@@ -13,7 +13,7 @@ function login() {
     headers: myHeaders,
     redirect: "follow",
   }
-  fetch(`${host}/${user.value}`, requestOptions)
+  fetch(`${host}/users/${user.value}`, requestOptions)
       .then(response => response.json())
       .then(data => {
         if (data.id === user.value) {   // 验证是否存在该用户return data
