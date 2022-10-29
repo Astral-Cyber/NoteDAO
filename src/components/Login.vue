@@ -73,7 +73,6 @@ function login() {
 .el-row {
   margin-bottom: 10px;
 }
-
 #operate {
   text-align: right;
 }
