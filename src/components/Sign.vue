@@ -5,13 +5,36 @@ const user = ref('')
 const name = ref('')
 const password = ref('')
 const repeatPassword = ref('')
+const host = 'http://123.60.44.50:3000'
+
+function register() {
+  const myHeaders = new Headers()
+  myHeaders.append("Content-Type", "application/json")
+  let requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    redirect: "follow",
+  }
+  requestOptions.body = JSON.stringify({
+    id: user.value,
+    name: name.value,
+    password: password.value,
+  });
+  if (repeatPassword.value !== password.value) {
+    alert("两次输入的密码不一致，请检查")
+  } else {
+    fetch(`${host}/users`, requestOptions) // 这里的网址没有id
+        .then(response => response.json())
+        .then(data => alert(data.id+"，注册成功"))
+  }
+}
 </script>
 
 <template>
   <el-card class="box-card">
     <template #header>
       <div class="card-header">
-        <span>SIGN</span>
+        <span>Create</span>
       </div>
     </template>
 
@@ -43,14 +66,14 @@ const repeatPassword = ref('')
     </el-row>
     <el-divider/>
     <div id="operate">
-      <el-button type="primary" size="large">注册</el-button>
+      <el-button type="primary" size="large" @click="register">注册</el-button>
     </div>
   </el-card>
 </template>
 
 <style scoped>
 .box-card {
-  width: 25vw;
+  width: 400px;
 }
 
 .card-header {
