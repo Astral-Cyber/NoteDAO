@@ -22,7 +22,7 @@ function register() {
   if (repeatPassword.value !== password.value) {
     alert("两次输入的密码不一致，请检查")
   } else {
-    fetch(`api/users`, requestOptions) // 这里的网址没有id
+    fetch(`/users`, requestOptions) // 这里的网址没有id
         .then(response => response.json())
         .then(data => alert(data.id+"，注册成功"))
   }
