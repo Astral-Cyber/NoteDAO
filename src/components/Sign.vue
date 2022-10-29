@@ -5,6 +5,7 @@ const user = ref('')
 const name = ref('')
 const password = ref('')
 const repeatPassword = ref('')
+const host = 'http://123.60.44.50:3000'
 
 function register() {
   const myHeaders = new Headers()
@@ -22,7 +23,7 @@ function register() {
   if (repeatPassword.value !== password.value) {
     alert("两次输入的密码不一致，请检查")
   } else {
-    fetch(`/users`, requestOptions) // 这里的网址没有id
+    fetch(`${host}/users`, requestOptions) // 这里的网址没有id
         .then(response => response.json())
         .then(data => alert(data.id+"，注册成功"))
   }
