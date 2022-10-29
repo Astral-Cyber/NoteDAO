@@ -1,11 +1,14 @@
 <script setup>
 import {ref} from 'vue'
+import {useRouter} from "vue-router";
 
+const router = useRouter()
 const user = ref('')
 const password = ref('')
 const host = 'http://123.60.44.50:3000'
 
 function login() {
+
   const myHeaders = new Headers()
   myHeaders.append("Content-Type", "application/json")
   let requestOptions = { // 里面不能有body
@@ -21,7 +24,12 @@ function login() {
           throw new Error("用户名不存在")
         }
         if (data.password === password.value) {
-          alert('登录成功')
+          router.push({
+            name: "Hello",
+            params: {
+              id: data.id,
+            }
+          })
         } else {
           throw new Error("密码错误")
         }
@@ -74,6 +82,7 @@ function login() {
 .el-row {
   margin-bottom: 10px;
 }
+
 #operate {
   text-align: right;
 }
