@@ -28,17 +28,4 @@ export default defineConfig({
             resolvers: [ElementPlusResolver()],
         }),
     ],
-    server: {
-        proxy: {
-            '/users': {
-                target: 'http://123.60.44.50:3000',
-                changeOrigin: true,
-                ws: true, //启用webSocket
-                // pathRewrite: {
-                //     // 重写api地址
-                //     '^/': ""
-                // }
-            }
-        }
-    }
 })
