@@ -21,6 +21,8 @@ const activeName = ref('first')
 
 <style scoped>
 .tabs {
+  margin: auto;
+  width: 422px;
   margin-top: -120px;
 }
 

@@ -12,6 +12,11 @@ const router = createRouter({
             path: '/Hello/:id',
             name: 'Hello',
             component: () => import('../views/HelloView.vue')
+        },
+        {
+            path: '/NoteDAO/:id',
+            name: 'NoteDAO',
+            component: () => import('../views/NoteView.vue')
         }
     ]
 })

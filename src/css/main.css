@@ -1,0 +1,183 @@
+#bar {
+    text-align: left !important;
+    width: max-content;
+}
+
+#bar div {
+    padding: 10px;
+    cursor: pointer;
+    color: #747bff;
+    /*border-radius: 10px;*/
+    /*border: #d0d3d8 2px solid;*/
+    font-weight: 900;
+    font-size: 36px;
+}
+
+#container {
+    height: 90vh;
+    display: flex;
+    overflow: hidden;
+}
+
+#l_side {
+    margin-top: 10px;
+    height: available;
+    text-align: left !important;
+    flex: 0;
+    padding: 10px;
+    opacity: 0;
+    border: #d0d3d8 2px dashed;
+    border-radius: 10px;
+    transition: flex 0.5s, opacity 0.75s;
+}
+
+.book {
+    position: relative;
+    height: 20px;
+    overflow: hidden;
+    transition: height 0.5s, opacity 0.75s, border-bottom-color 0.5s;
+    margin-bottom: 10px;
+    border-bottom: #d0d3d8 2px solid;
+    padding-bottom: 10px;
+}
+
+.book:hover {
+
+}
+
+.book h3 {
+    margin: 0;
+    transition: background-color 0.25s;
+    border-radius: 5px;
+    width: max-content;
+    padding: 2px 5px;
+}
+
+.close {
+    opacity: 0;
+    visibility: hidden;
+    padding: 0;
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    transition: opacity 0.5s, visibility 0.5s, top 0.5s;
+    cursor: pointer;
+}
+
+.book h3:hover {
+    background-color: rgba(208, 211, 216, 0.43);
+    cursor: pointer;
+}
+
+.note {
+    /*opacity: 0;*/
+    color: #7d7d7e;
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: bolder;
+    margin-top: 7px;
+}
+
+#r_side {
+    opacity: 0;
+    height: 118px;
+    text-align: left !important;
+    margin-top: 8px;
+    margin-left: 10px;
+    flex: 0;
+    padding: 1px 5px;
+    border: #d0d3d8 2px dashed;
+    border-radius: 10px;
+    transition: flex 0.5s, margin-top 0.5s, opacity 0.75s;
+    overflow: auto;
+}
+
+#r_side::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+}
+
+#r_content {
+    opacity: 0;
+    transition: opacity 0.75s;
+}
+
+#main {
+    height: available;
+    flex: 6;
+    padding: 10px 10px 0;
+    overflow: auto;
+}
+
+#main::-webkit-scrollbar {
+    display: none;
+}
+
+.item {
+    position: relative;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.markdown-body {
+    transition: background-color 0.25s;
+}
+
+.btm {
+    width: 50px;
+    height: 20px;
+    display: block;
+    margin-top: 4px;
+    padding: 0 !important;
+    font-size: small;
+    font-weight: 500;
+    font-family: inherit;
+    color: #747bff;
+    border: #dcdfe6 1px solid;
+}
+
+.delete {
+    background-color: #f46c6b;
+    color: white;
+}
+
+.react {
+    width: 100px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.options {
+    position: absolute;
+    top: 0px;
+    right: -60px;
+    transition: right 0.75s;
+}
+
+#title {
+    text-align: left !important;
+    margin: 4px 0;
+    width: 100%;
+}
+
+#title h2 {
+    margin: 0;
+}
+
+/*单元格*/
+#list {
+    flex: 6;
+}
+
+#list dt {
+    text-align: left !important;
+    min-height: 100px;
+    border: #d0d3d8 2px solid;
+    border-radius: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    padding: 10px;
+}

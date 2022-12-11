@@ -25,7 +25,7 @@ function login() {
         }
         if (data.password === password.value) {
           router.push({
-            name: "Hello",
+            name: "NoteDAO",
             params: {
               id: data.id,
             }
